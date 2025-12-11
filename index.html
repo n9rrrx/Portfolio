@@ -19,18 +19,25 @@
                         mono: ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', "Liberation Mono", "Courier New", 'monospace'],
                     },
                     colors: {
-                        dark: '#1a191d', /* Darker background from reference */
+                        dark: '#1a191d',
                         card: '#232323',
                         accent: '#ffffff',
                         muted: '#888888',
                         code: {
-                            cyan: '#00e5ff', /* Brighter cyan */
+                            cyan: '#00e5ff',
                             purple: '#c084fc',
                             green: '#4ade80',
                             blue: '#448aff',
                             pink: '#e91e63'
                         }
                     },
+                    // --- NEW GLOW SHADOWS ADDED HERE ---
+                    boxShadow: {
+                        'glow-cyan': '0 0 25px -5px rgba(0, 229, 255, 0.5), inset 0 0 10px -5px rgba(0, 229, 255, 0.3)',
+                        'glow-blue': '0 0 25px -5px rgba(68, 138, 255, 0.5), inset 0 0 10px -5px rgba(68, 138, 255, 0.3)',
+                        'glow-pink': '0 0 25px -5px rgba(233, 30, 99, 0.5), inset 0 0 10px -5px rgba(233, 30, 99, 0.3)',
+                    },
+                    // -----------------------------------
                     animation: {
                         'bounce-slow': 'bounce 2s infinite',
                         'slide-up': 'slideUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards',
@@ -71,9 +78,6 @@
         }
         .grid-item.hidden-item {
             display: none;
-            /* We use display:none for filtering to re-flow layout,
-               or we can use opacity/transform for animation.
-               For simplicity in vanilla JS: display: none */
         }
 
         /* Hover Reveal Effects */
@@ -162,7 +166,7 @@
 
         <div class="grid md:grid-cols-3 gap-8">
 
-            <div class="bg-card p-8 group hover:-translate-y-2 transition-transform duration-300 border-l-2 border-transparent hover:border-code-cyan">
+            <div class="bg-card p-8 group hover:-translate-y-2 hover:shadow-glow-cyan transition-all duration-300 border-l-2 border-transparent hover:border-code-cyan">
                 <div class="mb-6 text-4xl text-code-cyan"><i class="fab fa-laravel"></i></div>
                 <h3 class="text-xl font-bold mb-2">Laravel Backend Development</h3>
                 <p class="text-muted text-sm leading-relaxed mb-4">
@@ -171,7 +175,7 @@
                 <div class="text-xs font-mono text-white/50">Laravel, PHP 8, REST APIs, MVC, MySQL</div>
             </div>
 
-            <div class="bg-card p-8 group hover:-translate-y-2 transition-transform duration-300 border-l-2 border-transparent hover:border-code-blue">
+            <div class="bg-card p-8 group hover:-translate-y-2 hover:shadow-glow-blue transition-all duration-300 border-l-2 border-transparent hover:border-code-blue">
                 <div class="mb-6 text-4xl text-code-blue"><i class="fas fa-code"></i></div>
                 <h3 class="text-xl font-bold mb-2">Full-Stack Web Development</h3>
                 <p class="text-muted text-sm leading-relaxed mb-4">
@@ -180,7 +184,7 @@
                 <div class="text-xs font-mono text-white/50">PHP, Laravel, JavaScript, MySQL, RESTful APIs</div>
             </div>
 
-            <div class="bg-card p-8 group hover:-translate-y-2 transition-transform duration-300 border-l-2 border-transparent hover:border-code-pink">
+            <div class="bg-card p-8 group hover:-translate-y-2 hover:shadow-glow-pink transition-all duration-300 border-l-2 border-transparent hover:border-code-pink">
                 <div class="mb-6 text-4xl text-code-pink"><i class="fas fa-paint-brush"></i></div>
                 <h3 class="text-xl font-bold mb-2">Frontend & UI Development</h3>
                 <p class="text-muted text-sm leading-relaxed mb-4">
