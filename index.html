@@ -3,7 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nasrum Minallah |PHP & LARAVEL| Back-End Developer</title>
+    <meta name="description" content="Nasrum Minallah - PHP & Laravel Back-End Developer. Building scalable web applications with modern Laravel and PHP best practices.">
+    <meta name="keywords" content="Laravel, PHP, Backend Developer, Web Development, RESTful APIs, Full-Stack Developer">
+    <meta name="author" content="Nasrum Minallah">
+    <meta property="og:title" content="Nasrum Minallah | PHP & Laravel Back-End Developer">
+    <meta property="og:description" content="Experienced backend developer specializing in Laravel, PHP, and scalable web solutions.">
+    <meta property="og:image" content="./images/1.png">
+    <meta property="og:url" content="https://n9rrrx.github.io/Portfolio/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nasrum Minallah | Backend Developer">
+    <meta name="twitter:description" content="PHP & Laravel specialist building powerful backend systems.">
+
+    <title>Nasrum Minallah | PHP & LARAVEL | Back-End Developer</title>
     <link rel="icon" type="image/png" href="./images/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -31,13 +42,11 @@
                             pink: '#e91e63'
                         }
                     },
-                    // --- NEW GLOW SHADOWS ADDED HERE ---
                     boxShadow: {
                         'glow-cyan': '0 0 25px -5px rgba(0, 229, 255, 0.5), inset 0 0 10px -5px rgba(0, 229, 255, 0.3)',
                         'glow-blue': '0 0 25px -5px rgba(68, 138, 255, 0.5), inset 0 0 10px -5px rgba(68, 138, 255, 0.3)',
                         'glow-pink': '0 0 25px -5px rgba(233, 30, 99, 0.5), inset 0 0 10px -5px rgba(233, 30, 99, 0.3)',
                     },
-                    // -----------------------------------
                     animation: {
                         'bounce-slow': 'bounce 2s infinite',
                         'slide-up': 'slideUp 0.6s cubic-bezier(0.165, 0.84, 0.44, 1) forwards',
@@ -53,16 +62,11 @@
         }
     </script>
     <style>
-        /* Global Styles matching reference */
         body { background-color: #1a191d; overflow-x: hidden; }
-
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #1a191d; }
         ::-webkit-scrollbar-thumb { background: #444; border-radius: 4px; }
         ::-webkit-scrollbar-thumb:hover { background: #555; }
-
-        /* Canvas Background */
         #bg-canvas {
             position: fixed;
             top: 0;
@@ -71,16 +75,12 @@
             height: 100%;
             z-index: -1;
         }
-
-        /* Portfolio Grid Transitions */
         .grid-item {
             transition: all 0.4s ease-in-out;
         }
         .grid-item.hidden-item {
             display: none;
         }
-
-        /* Hover Reveal Effects */
         .project-card:hover .project-info {
             transform: translateY(0);
         }
@@ -88,8 +88,6 @@
             transform: translateY(100%);
             transition: transform 0.3s ease;
         }
-
-        /* Expander Animation for Name */
         .name-container:hover .expander {
             max-width: 200px;
             opacity: 1;
@@ -101,6 +99,28 @@
             overflow: hidden;
             transition: all 0.5s ease;
             white-space: nowrap;
+        }
+        .toast {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            padding: 1rem 1.5rem;
+            border-radius: 0.5rem;
+            font-weight: bold;
+            z-index: 70;
+            animation: slideInRight 0.4s ease;
+        }
+        .toast.success {
+            background-color: #4ade80;
+            color: #000;
+        }
+        .toast.error {
+            background-color: #ef4444;
+            color: #fff;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(400px); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
         }
     </style>
 </head>
@@ -126,6 +146,7 @@
 
 <div id="mobile-menu" class="hidden fixed inset-0 z-40 bg-dark pt-24 px-6 md:hidden">
     <div class="flex flex-col gap-8 text-2xl font-display uppercase">
+        <a href="#about" onclick="document.getElementById('mobile-menu').classList.add('hidden')">About</a>
         <a href="#skills" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Expertise</a>
         <a href="#work" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Work</a>
         <a href="#experience" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Experience</a>
@@ -149,7 +170,7 @@
         </div>
     </div>
 
-    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow opacity-60 hover:opacity-100 transition-opacity cursor-pointer" onclick="document.getElementById('skills').scrollIntoView({behavior: 'smooth'})">
+    <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce-slow opacity-60 hover:opacity-100 transition-opacity cursor-pointer" onclick="document.getElementById('about').scrollIntoView({behavior: 'smooth'})">
         <svg width="40" height="60" viewBox="0 0 40 60" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect x="5" y="5" width="30" height="50" rx="15" stroke="white" stroke-width="2"/>
             <circle cx="20" cy="15" r="3" fill="white">
@@ -159,6 +180,38 @@
         </svg>
     </div>
 </header>
+
+<!-- About Section (NEW) -->
+<section id="about" class="py-24 px-6 md:px-20 lg:px-32 border-t border-white/5 bg-card relative z-10">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-display font-bold mb-8">About Me</h2>
+
+        <div class="grid md:grid-cols-3 gap-8 items-start">
+            <div class="md:col-span-2">
+                <p class="text-lg text-muted leading-relaxed mb-6">
+                    I'm a passionate <span class="text-code-cyan font-bold">Back-End Developer</span> with 1+ year of professional experience building scalable, secure, and high-performance web applications. Specializing in <span class="text-code-cyan">Laravel</span> and <span class="text-code-cyan">PHP</span>, I craft robust APIs and database architectures that power modern web solutions.
+                </p>
+                <p class="text-lg text-muted leading-relaxed mb-6">
+                    I thrive on solving complex problems, optimizing system performance, and delivering clean, maintainable code. Whether it's architecting RESTful APIs, designing efficient databases, or implementing real-time features, I'm committed to exceeding expectations and driving business value.
+                </p>
+                <p class="text-lg text-muted leading-relaxed">
+                    When I'm not coding, you'll find me exploring new technologies, contributing to open-source, or sharing knowledge with the developer community.
+                </p>
+            </div>
+
+            <div class="bg-dark p-6 rounded-lg border border-white/10">
+                <h3 class="text-code-cyan font-bold mb-4 text-lg">Quick Facts</h3>
+                <ul class="space-y-3 text-sm text-muted">
+                    <li><span class="text-white font-bold">Experience:</span> 1+ Years</li>
+                    <li><span class="text-white font-bold">Projects:</span> 4+ Completed</li>
+                    <li><span class="text-white font-bold">Focus:</span> Backend & APIs</li>
+                    <li><span class="text-white font-bold">Location:</span> Pakistan</li>
+                    <li><span class="text-white font-bold">Email:</span> <a href="mailto:nasrumminallah2102@gmail.com" class="text-code-cyan hover:underline">nasrumminallah2102@gmail.com</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
 
 <section id="skills" class="py-24 px-6 md:px-20 lg:px-32 border-t border-white/5 bg-dark relative z-10">
     <div class="mb-16">
@@ -195,17 +248,16 @@
 
         </div>
     </div>
-</section>
 
-<div class="mt-8 text-center max-w-2xl mx-auto">
-    <p class="text-xl font-display italic">
-        “He who has a why to live can bear almost any how."
-    </p>
-    <div class="mt-2 text-code-cyan text-sm tracking-widest uppercase">
-        - Friedrich Nietzsche
+    <div class="mt-8 text-center max-w-2xl mx-auto">
+        <p class="text-xl font-display italic">
+            "He who has a why to live can bear almost any how."
+        </p>
+        <div class="mt-2 text-code-cyan text-sm tracking-widest uppercase">
+            - Friedrich Nietzsche
+        </div>
     </div>
-</div>
-
+</section>
 
 <section id="work" class="py-24 px-6 md:px-20 lg:px-32 border-t border-white/5 bg-dark relative z-10">
 
@@ -217,16 +269,16 @@
 
         <div class="flex gap-6 mt-8 md:mt-0 font-mono text-sm uppercase tracking-wider cursor-pointer select-none">
             <div class="filter-btn text-code-cyan font-bold" onclick="filterProjects('all', this)">All<sup class="text-[10px] ml-1 opacity-60">4</sup></div>
-            <div class="filter-btn hover:text-code-cyan transition-colors" onclick="filterProjects('js', this)">JS<sup class="text-[10px] ml-1 opacity-60">1</sup></div>
-            <div class="filter-btn hover:text-code-cyan transition-colors" onclick="filterProjects('php', this)">PHP<sup class="text-[10px] ml-1 opacity-60">3</sup></div>
-            <div class="filter-btn hover:text-code-cyan transition-colors" onclick="filterProjects('laravel', this)">Laravel<sup class="text-[10px] ml-1 opacity-60">3</sup></div>
+            <div class="filter-btn hover:text-code-cyan transition-colors" onclick="filterProjects('js', this)">JS<sup class="text-[10px] ml-1 opacity-60">2</sup></div>
+            <div class="filter-btn hover:text-code-cyan transition-colors" onclick="filterProjects('php', this)">PHP<sup class="text-[10px] ml-1 opacity-60">4</sup></div>
+            <div class="filter-btn hover:text-code-cyan transition-colors" onclick="filterProjects('laravel', this)">Laravel<sup class="text-[10px] ml-1 opacity-60">4</sup></div>
         </div>
     </div>
 
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="gallery">
 
-        <div class="grid-item project-card php laravel group relative overflow-hidden bg-card h-64 md:h-80 cursor-pointer" onclick="openModal('Dunki', 'PHP / Laravel', 'Task management system built in Laravel.', './images/1.png')">
-            <img src="./images/1.png" alt="Dunki Project" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="grid-item project-card php laravel group relative overflow-hidden bg-card h-64 md:h-80 cursor-pointer" onclick="openModal('Dunki', 'PHP / Laravel', 'Task management system built in Laravel.', './images/1.png', '#', '#')">
+            <img src="./images/1.png" alt="Dunki Project" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="absolute bottom-0 left-0 w-full p-6 project-info">
                 <h3 class="text-2xl font-bold mb-1">Dunki</h3>
@@ -235,8 +287,8 @@
             </div>
         </div>
 
-        <div class="grid-item project-card php laravel group relative overflow-hidden bg-card h-64 md:h-80 cursor-pointer" onclick="openModal('Shiela', 'PHP / Laravel', 'E-commerce platform with admin panel.', './images/2.png')">
-            <img src="./images/2.png" alt="Shiela Project" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="grid-item project-card php laravel group relative overflow-hidden bg-card h-64 md:h-80 cursor-pointer" onclick="openModal('Shiela', 'PHP / Laravel', 'E-commerce platform with admin panel.', './images/2.png', '#', '#')">
+            <img src="./images/2.png" alt="Shiela Project" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="absolute bottom-0 left-0 w-full p-6 project-info">
                 <h3 class="text-2xl font-bold mb-1">Shiela</h3>
@@ -245,8 +297,8 @@
             </div>
         </div>
 
-        <div class="grid-item project-card php laravel js group relative overflow-hidden bg-card h-64 md:h-80 cursor-pointer" onclick="openModal('Likho', 'PHP / Laravel / JS', 'Document writing app with JS enhancements.', './images/3.png')">
-            <img src="./images/3.png" alt="Likho Project" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="grid-item project-card php laravel js group relative overflow-hidden bg-card h-64 md:h-80 cursor-pointer" onclick="openModal('Likho', 'PHP / Laravel / JS', 'Document writing app with JS enhancements.', './images/3.png', '#', '#')">
+            <img src="./images/3.png" alt="Likho Project" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div class="absolute bottom-0 left-0 w-full p-6 project-info">
                 <h3 class="text-2xl font-bold mb-1">Likho</h3>
@@ -255,36 +307,18 @@
             </div>
         </div>
 
-        <div class="grid-item project-card group relative overflow-hidden bg-card h-64 md:h-80 opacity-60 cursor-not-allowed">
-            <img src="./images/4.png" alt="Coming Soon" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        <div class="grid-item project-card php laravel js group relative overflow-hidden bg-card h-64 md:h-80 cursor-pointer" onclick="openModal('Reco-song', 'PHP / Laravel / JS', 'Music discovery app with real-time audio visualizer and Spotify integration.', './images/4.png', '#', '#')">
+            <img src="./images/4.png" alt="Reco-song Project" class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" loading="lazy">
             <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            <div class="absolute inset-0 flex items-center justify-center text-white text-xl font-bold">
-                Coming Soon
+            <div class="absolute bottom-0 left-0 w-full p-6 project-info">
+                <h3 class="text-2xl font-bold mb-1">Reco-song</h3>
+                <p class="text-code-cyan font-mono text-xs mb-4">PHP / Laravel / JS</p>
+                <div class="text-xs uppercase tracking-widest border-b border-white inline-block pb-1">Show Project</div>
             </div>
         </div>
 
     </div>
 </section>
-
-<script>
-    function filterProjects(category, element) {
-        const cards = document.querySelectorAll('.grid-item');
-        const allFilters = document.querySelectorAll('.filter-btn');
-
-        allFilters.forEach(f => f.classList.remove('text-code-cyan', 'font-bold'));
-        element.classList.add('text-code-cyan', 'font-bold');
-
-        cards.forEach(card => {
-            if (category === 'all' || card.classList.contains(category)) {
-                card.style.display = '';
-            } else {
-                card.style.display = 'none';
-            }
-        });
-    }
-</script>
-
-
 
 <section id="experience" class="py-24 px-6 md:px-20 lg:px-32 border-t border-white/5 bg-card relative z-10">
     <h2 class="text-3xl font-display font-bold mb-12">Professional Experience</h2>
@@ -330,22 +364,23 @@
 
         <p class="text-xl mb-12">Have a question or want to work together?</p>
 
-        <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
             <input type="hidden" name="access_key" value="7856f94c-cd13-4c96-8848-59468955d4d5">
             <input type="hidden" name="redirect" value="https://n9rrrx.github.io/Portfolio/">
+            <input type="hidden" name="to_email" value="nasrumminallah2102@gmail.com">
 
             <div>
-                <input type="text" name="name" placeholder="Name" required class="w-full bg-card border border-white/5 p-4 focus:outline-none focus:border-code-cyan transition-colors text-white">
+                <input type="text" name="name" placeholder="Name" required class="w-full bg-card border border-white/5 p-4 focus:outline-none focus:border-code-cyan transition-colors text-white" onchange="validateField(this)">
             </div>
             <div>
-                <input type="email" name="email" placeholder="Enter email" required class="w-full bg-card border border-white/5 p-4 focus:outline-none focus:border-code-cyan transition-colors text-white">
+                <input type="email" name="email" placeholder="Enter email" required class="w-full bg-card border border-white/5 p-4 focus:outline-none focus:border-code-cyan transition-colors text-white" onchange="validateField(this)">
             </div>
             <div>
-                <textarea name="message" rows="5" placeholder="Your Message" class="w-full bg-card border border-white/5 p-4 focus:outline-none focus:border-code-cyan transition-colors text-white"></textarea>
+                <textarea name="message" rows="5" placeholder="Your Message" required class="w-full bg-card border border-white/5 p-4 focus:outline-none focus:border-code-cyan transition-colors text-white" onchange="validateField(this)"></textarea>
             </div>
 
             <div class="text-right">
-                <button type="submit" class="border border-code-cyan text-code-cyan px-10 py-3 text-sm font-bold uppercase tracking-widest hover:bg-code-cyan hover:text-black transition-all">
+                <button type="submit" class="border border-code-cyan text-code-cyan px-10 py-3 text-sm font-bold uppercase tracking-widest hover:bg-code-cyan hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed" id="submit-btn">
                     Submit
                 </button>
             </div>
@@ -372,7 +407,7 @@
 
 <div id="project-modal" class="fixed inset-0 z-[60] hidden">
     <div class="absolute inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
-    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl px-6">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-2xl px-6 max-h-[90vh] overflow-y-auto">
         <div class="bg-card border border-white/10 p-8 shadow-2xl relative">
             <button onclick="closeModal()" class="absolute top-4 right-4 text-muted hover:text-white"><i class="fas fa-times text-xl"></i></button>
 
@@ -383,15 +418,21 @@
             <h3 id="modal-title" class="text-3xl font-display font-bold mb-2">Project Title</h3>
             <div id="modal-tags" class="text-code-cyan font-mono text-sm mb-6">Tags</div>
             <p id="modal-desc" class="text-gray-300 leading-relaxed mb-8">Description goes here...</p>
-            <button class="border border-white/20 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
-                View Site <i class="fas fa-external-link-alt ml-2"></i>
-            </button>
+
+            <div class="flex gap-4">
+                <a id="modal-live" href="#" target="_blank" rel="noopener noreferrer" class="border border-code-cyan text-code-cyan px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-code-cyan hover:text-black transition-all inline-flex items-center gap-2">
+                    <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a id="modal-github" href="#" target="_blank" rel="noopener noreferrer" class="border border-white/20 text-white px-6 py-3 text-xs font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all inline-flex items-center gap-2">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
         </div>
     </div>
 </div>
 
 <script>
-    // --- Canvas Background Logic (Rain/Diagonal Lines) ---
+    // Canvas Background Logic
     const canvas = document.getElementById('bg-canvas');
     const ctx = canvas.getContext('2d');
     let width, height;
@@ -416,9 +457,9 @@
             else { this.x = -10; this.y = Math.random() * height; }
             this.speed = Math.random() * 2 + 1.5;
             this.len = Math.random() * 80 + 40;
-            this.angle = Math.PI / 4; // 45 degrees
+            this.angle = Math.PI / 4;
             this.opacity = Math.random() * 0.5 + 0.1;
-            this.color = Math.random() > 0.9 ? '226, 232, 240' : '80, 100, 120'; // Slight color variation
+            this.color = Math.random() > 0.9 ? '226, 232, 240' : '80, 100, 120';
         }
         update() {
             this.x += this.speed * Math.cos(this.angle);
@@ -454,9 +495,8 @@
     resize();
     animate();
 
-    // --- Filtering Logic (Isotope Replacement) ---
+    // Filtering Logic
     function filterProjects(category, btn) {
-        // Update Active Button
         document.querySelectorAll('.filter-btn').forEach(b => {
             b.classList.remove('text-code-cyan', 'font-bold');
             b.classList.add('hover:text-code-cyan');
@@ -464,12 +504,10 @@
         btn.classList.add('text-code-cyan', 'font-bold');
         btn.classList.remove('hover:text-code-cyan');
 
-        // Filter Grid Items
         const items = document.querySelectorAll('.grid-item');
         items.forEach(item => {
             if (category === 'all' || item.classList.contains(category)) {
                 item.style.display = 'block';
-                // Trigger animation restart
                 item.style.opacity = '0';
                 item.style.transform = 'translateY(20px)';
                 setTimeout(() => {
@@ -483,41 +521,92 @@
         });
     }
 
-    // --- Accordion Logic ---
+    // Accordion Logic
     function toggleAccordion(id) {
         const content = document.getElementById(id);
-        const isHidden = content.classList.contains('hidden');
+        if (!content) return;
 
-        // Close all others (optional)
-        // document.querySelectorAll('[id^="job"]').forEach(el => el.classList.add('hidden'));
+        const header = content.previousElementSibling;
+        const icon = header ? header.querySelector('.fa-plus, .fa-minus') : null;
+        const isHidden = content.classList.contains('hidden');
 
         if (isHidden) {
             content.classList.remove('hidden');
-            content.previousElementSibling.querySelector('.fa-plus').classList.replace('fa-plus', 'fa-minus');
+            if (icon) icon.classList.replace('fa-plus', 'fa-minus');
         } else {
             content.classList.add('hidden');
-            content.previousElementSibling.querySelector('.fa-minus').classList.replace('fa-minus', 'fa-plus');
+            if (icon) icon.classList.replace('fa-minus', 'fa-plus');
         }
     }
 
-    // --- UPDATED Modal Logic ---
-    // Added 'image' parameter
-    function openModal(title, tags, desc, image) {
+    // Modal Logic (UPDATED with live demo & github links)
+    function openModal(title, tags, desc, image, liveUrl, githubUrl) {
         document.getElementById('modal-title').innerText = title;
         document.getElementById('modal-tags').innerText = tags;
         document.getElementById('modal-desc').innerText = desc;
-
-        // NEW: Updates the image source
         document.getElementById('modal-img').src = image;
-
+        document.getElementById('modal-live').href = liveUrl;
+        document.getElementById('modal-github').href = githubUrl;
         document.getElementById('project-modal').classList.remove('hidden');
     }
 
     function closeModal() {
         document.getElementById('project-modal').classList.add('hidden');
     }
-</script>
-<script>
+
+    // Form Validation & Toast Notifications (NEW)
+    function validateField(field) {
+        if (field.type === 'email') {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(field.value)) {
+                field.classList.add('border-code-pink');
+                field.classList.remove('border-white/5');
+            } else {
+                field.classList.remove('border-code-pink');
+                field.classList.add('border-white/5');
+            }
+        }
+    }
+
+    function showToast(message, type = 'success') {
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        toast.innerText = message;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.remove(), 4000);
+    }
+
+    // Handle Contact Form Submission (NEW)
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const submitBtn = document.getElementById('submit-btn');
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Sending...';
+
+        const formData = new FormData(this);
+
+        fetch(this.action, {
+            method: this.method,
+            body: formData
+        })
+            .then(response => {
+                if (response.ok) {
+                    showToast('✓ Message sent successfully! I\'ll get back to you soon.', 'success');
+                    document.getElementById('contact-form').reset();
+                } else {
+                    showToast('✗ Error sending message. Please try again.', 'error');
+                }
+            })
+            .catch(error => {
+                showToast('✗ Connection error. Please try again.', 'error');
+            })
+            .finally(() => {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Submit';
+            });
+    });
+
     // Disable right-click
     document.addEventListener('contextmenu', (e) => e.preventDefault());
 
@@ -528,7 +617,7 @@
     // Disable F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U
     document.onkeydown = (e) => {
         if (
-            event.keyCode === 123 ||
+            e.keyCode === 123 ||
             ctrlShiftKey(e, 'I') ||
             ctrlShiftKey(e, 'J') ||
             ctrlShiftKey(e, 'C') ||
@@ -537,5 +626,6 @@
             return false;
     };
 </script>
+
 </body>
 </html>
